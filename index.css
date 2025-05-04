@@ -2,22 +2,8 @@
 /* ----- Basic Setup ----- */
 /* --------------------------------------- */
 
-@font-face {
-    font-family: 'Hk Grotesk';
-    font-style: normal;
-    font-weight: 400;
-    src: url('./fonts/HKGrotesk-Regular.woff') format('woff');
-}
-
-@font-face {
-    font-family: 'Jost';
-    font-style: normal;
-    font-weight: 400;
-    src: url('./fonts/Jost-Regular.ttf') format('woff');
-}
-
-/* Import Playfair Display font */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap');
+/* Import fonts */
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Nunito+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap');
 
 * {
     margin: 0;
@@ -32,13 +18,14 @@
     --font-size-medium-1: 3.6rem;
     --font-size-large: 5.5rem;
     --font-size-huge: 7.5rem;
-    --font-stack: 'Playfair Display', serif; /* Changed to Playfair Display */
+    --font-stack: 'Nunito Sans', sans-serif; /* Changed to Nunito Sans */
+    --heading-font: 'Krona One', sans-serif; /* Krona One for headings */
 
     --line-height-normal: 1.7;
     --line-height-small: 1.2;
 
     --black: #000;
-    --light-bg: #EBEBE6; /* Added light background color */
+    --light-bg: #EBEBE6; /* Light background color */
     --pink: #9A0100;
     --white: #f0e9f2;
     --white-1: #e5e5e6da;
@@ -125,16 +112,30 @@ img {
 h1,
 h2,
 h3 {
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-stack);
     font-weight: 400;
     line-height: var(--line-height-small);
     color: var(--white);
 }
 
-.heading-primary {
-    line-height: 1;
-    font-size: var(--font-size-huge);
+/* Special styles for specific headings - all section titles use Krona One now */
+.header .heading-primary,
+.work h2,
+.about h2,
+.contact h2 {
+    font-family: var(--heading-font);
+    line-height: 1.1;
     font-weight: 400;
+}
+
+/* Project titles also use Krona One */
+.work h3 {
+    font-family: var(--heading-font);
+}
+
+.header .heading-primary {
+    font-size: var(--font-size-huge);
+    color: var(--white);
 }
 
 @media(max-width: 900px) {
@@ -193,7 +194,7 @@ p {
 a {
     color: var(--white);
     font-weight: 400;
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-stack);
     transition: all .2s;
     outline: 2px solid transparent;
 }
@@ -297,7 +298,7 @@ body:not(.user-is-tabbing) a:focus {
 
 .link__text span {
     padding-left: 1rem;
-    font-family: sans-serif;
+    font-family: var(--font-stack);
 }
 
 /* ----- Back to Top ----- */
@@ -414,6 +415,8 @@ body:not(.user-is-tabbing) a:focus {
     background-position: center;
     background-attachment: fixed;
     font-size: var(--font-size-normal);
+    color: var(--white);
+    background-color: var(--black);
 }
 
 .header__text {
@@ -425,7 +428,7 @@ body:not(.user-is-tabbing) a:focus {
 .header__text p {
     margin: 1.5rem 0 3.5rem;
     max-width: var(--container-medium-width);
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-stack);
     font-size: var(--font-size-medium);
 }
 
@@ -526,10 +529,19 @@ body:not(.user-is-tabbing) a:focus {
 /* ----- Clients ----- */
 /* --------------------------------------- */
 
+.client {
+    background-color: var(--light-bg);
+    color: var(--black);
+}
+
+.client h2 {
+    color: var(--black);
+}
+
 .client__logos {
     display: flex;
     justify-content: space-between;
-    filter: invert(100%) grayscale(100%) opacity(.8);
+    filter: invert(0%); /* Changed - no need to invert on light background */
 }
 
 .client__logo {
@@ -551,6 +563,24 @@ body:not(.user-is-tabbing) a:focus {
 /* --------------------------------------- */
 /* ----- About ----- */
 /* --------------------------------------- */
+
+.about {
+    background-color: var(--black);
+    color: var(--white-1);
+}
+
+.about h2,
+.about h3 {
+    color: var(--white);
+}
+
+.about a {
+    color: var(--white);
+}
+
+.about h2::after {
+    background: var(--pink);
+}
 
 .about__content {
     display: flex;
@@ -597,7 +627,6 @@ body:not(.user-is-tabbing) a:focus {
     color: var(--black);
 }
 
-
 .contact__info {
     max-width: var(--container-medium-width);
 }
@@ -609,6 +638,12 @@ body:not(.user-is-tabbing) a:focus {
 .footer {
     text-align: center;
     padding: var(--gutter-medium) 0 var(--gutter-normal);
+    background-color: var(--black);
+    color: var(--white-1);
+}
+
+.footer a {
+    color: var(--white);
 }
 
 .footer__social-links {
@@ -641,4 +676,18 @@ body:not(.user-is-tabbing) a:focus {
     .footer {
         padding: var(--gutter-medium) 0;
     } 
-} 
+}
+
+/* Fix hover states */
+.work .link__text:hover::after,
+.work .link__text:focus:after,
+.contact .link__text:hover::after,
+.contact .link__text:focus:after {
+    background: var(--pink);
+}
+
+/* About section hover states (dark background) */
+.about .link__text:hover::after,
+.about .link__text:focus:after {
+    background: var(--pink);
+}
