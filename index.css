@@ -2,58 +2,6 @@
 /* ----- Basic Setup ----- */
 /* --------------------------------------- */
 
-/*@font-face {
-    font-family: 'Hk Grotesk';
-    font-style: normal;
-    font-weight: 400;
-    src: url('./fonts/HKGrotesk-Regular.woff') format('woff');
-}
-
-@font-face {
-    font-family: 'Jost';
-    font-style: normal;
-    font-weight: 400;
-    src: url('./fonts/Jost-Regular.ttf') format('woff');
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: inherit;
-}
-
-:root {
-    --font-size-small: 1.8rem;
-    --font-size-normal: 2.2rem;
-    --font-size-medium: 2.8rem;
-    --font-size-medium-1: 3.6rem;
-    --font-size-large: 5.5rem;
-    --font-size-huge: 7.5rem;
-    --font-stack: 'Hk Grotesk', sans-serif;
-
-    --line-height-normal: 1.7;
-    --line-height-small: 1.2;
-
-    --black: #000;
-    --pink: #9A0100;
-    --white: #f0e9f2;
-    --white-1: #e5e5e6da;
-
-
-    --container-max-width: 1180px;
-    --container-normal-width: 800px;
-    --container-medium-width: 700px; 
-    --container-small-width: 500px;
-
-    --gutter-huge: 12rem;
-    --gutter-medium: 6rem;
-    --gutter-normal: 3rem;
-    --gutter-small-1: 2.5rem;
-    --gutter-small: 2rem;
-
-    --border-light: 1px solid rgb(36, 35, 35);
-}*/
-
 @font-face {
     font-family: 'Hk Grotesk';
     font-style: normal;
@@ -177,7 +125,7 @@ img {
 h1,
 h2,
 h3 {
-    font-family: 'Jost', sans-serif;
+    font-family: 'Playfair Display', serif;
     font-weight: 400;
     line-height: var(--line-height-small);
     color: var(--white);
@@ -245,7 +193,7 @@ p {
 a {
     color: var(--white);
     font-weight: 400;
-    font-family: 'Jost', sans-serif;
+    font-family: 'Playfair Display', serif;
     transition: all .2s;
     outline: 2px solid transparent;
 }
@@ -477,7 +425,7 @@ body:not(.user-is-tabbing) a:focus {
 .header__text p {
     margin: 1.5rem 0 3.5rem;
     max-width: var(--container-medium-width);
-    font-family: 'Jost', sans-serif;
+    font-family: 'Playfair Display', serif;
     font-size: var(--font-size-medium);
 }
 
@@ -494,6 +442,20 @@ body:not(.user-is-tabbing) a:focus {
 /* --------------------------------------- */
 /* ----- Work ----- */
 /* --------------------------------------- */
+
+.work {
+    background-color: var(--light-bg);
+    color: var(--black);
+}
+
+.work h2, 
+.work h3 {
+    color: var(--black);
+}
+
+.work a {
+    color: var(--black);
+}
 
 .work__box {
     display: flex;
@@ -621,6 +583,20 @@ body:not(.user-is-tabbing) a:focus {
 /* --------------------------------------- */
 /* ----- Contact ----- */
 /* --------------------------------------- */
+
+.contact {
+    background-color: var(--light-bg);
+    color: var(--black);
+}
+
+.contact h2 {
+    color: var(--black);
+}
+
+.contact a {
+    color: var(--black);
+}
+
 
 .contact__info {
     max-width: var(--container-medium-width);
