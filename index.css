@@ -18,6 +18,7 @@
   }
 
 @import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Nunito+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap');
 
 * {
     margin: 0;
@@ -34,6 +35,7 @@
     --font-size-huge: 7.5rem;
     --font-stack: 'Jost', 'Nunito Sans', sans-serif; /* Using Jost as primary */
     --heading-font: 'Krona One', sans-serif;  /* Krona One for headings */
+    --handwriting-font: 'Caveat', cursive; /* Handwriting font for annotations */
 
     --line-height-normal: 1.7;
     --line-height-small: 1.2;
@@ -43,6 +45,7 @@
     --pink: #9A0100;
     --white: #f0e9f2;
     --white-1: #e5e5e6da;
+    --yellow-note: #fefabc; /* Post-it note color */
 
     --container-max-width: 1180px;
     --container-normal-width: 800px;
@@ -161,6 +164,7 @@ h3 {
 h2 {
     font-size: var(--font-size-large);
     margin-bottom: var(--gutter-medium);
+    position: relative; /* Added for scrapbook doodles */
 }
 
 h2::after {
@@ -239,6 +243,8 @@ body:not(.user-is-tabbing) a:focus {
     color: inherit;
     border: 1px solid  var(--pink);
     font-weight: 400;
+    transform: rotate(-1deg); /* Added rotation for scrapbook feel */
+    transition: all 0.3s;
 }
 
 .btn:focus {
@@ -262,6 +268,11 @@ body:not(.user-is-tabbing) a:focus {
 .btn:focus::after {
     right: 0;
     background: var(--pink);
+}
+
+.btn:hover {
+    transform: rotate(0); /* Straighten on hover */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
 }
 
 .btn--pink {
@@ -446,37 +457,21 @@ body:not(.user-is-tabbing) a:focus {
     font-size: var(--font-size-medium);
 }
 
-@media(max-width: 500px) {
-    .header {
-        text-align: center;
-    }
-
-    .header__text p {
-        transform: scale(.8);
-    }
+/* Polaroid frame for name */
+.polaroid-frame {
+    background: white;
+    padding: 2rem;
+    display: inline-block;
+    transform: rotate(-2deg);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    margin-bottom: 4rem;
+    position: relative;
+    transition: all 0.3s ease;
 }
 
-/* --------------------------------------- */
-/* ----- Work ----- */
-/* --------------------------------------- */
-
-.work {
-    background-color: var(--light-bg);
-    color: var(--black);
-}
-
-.work h2, 
-.work h3 {
-    color: var(--black);
-}
-
-.work a {
-    color: var(--black);
-}
-
-.work__box {
-    display: flex;
-    align-items: center;
+.polaroid-frame:hover {
+    transform: rotate(0) translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
 @media(max-width: 900px) {
@@ -506,7 +501,6 @@ body:not(.user-is-tabbing) a:focus {
 }
 
 .work__list {
-    /* list-style-type: square; */
     list-style-position: inside;
     margin-bottom: var(--gutter-normal);
 }
@@ -524,6 +518,122 @@ body:not(.user-is-tabbing) a:focus {
 
 .work__image-box {
     margin-bottom: var(--gutter-normal);
+    position: relative;
+}
+
+/* Polaroid image styling for projects */
+.polaroid-image {
+    background: white;
+    padding: 1.5rem 1.5rem 4rem 1.5rem;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    transform: rotate(1deg);
+    transition: all 0.3s ease;
+}
+
+.polaroid-image:hover {
+    transform: rotate(0) translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.polaroid-caption {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+/* Paperclip styling */
+.paperclip {
+    position: absolute;
+    top: -2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 3rem;
+    height: 6rem;
+    z-index: 2;
+}
+
+.paperclip::before {
+    content: '';
+    position: absolute;
+    width: 3rem;
+    height: 2rem;
+    background: #888;
+    border-radius: 1rem 1rem 0 0;
+}
+
+.paperclip::after {
+    content: '';
+    position: absolute;
+    width: 1rem;
+    height: 4rem;
+    background: #888;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 2rem;
+    border-radius: 0 0 0.5rem 0.5rem;
+}
+
+.paperclip-red::before {
+    background: var(--pink);
+}
+
+.paperclip-red::after {
+    background: var(--pink);
+}
+
+/* Handwritten note styling */
+.handwritten-note {
+    position: absolute;
+    bottom: -5rem;
+    right: -2rem;
+    background: var(--yellow-note);
+    padding: 1.5rem;
+    max-width: 20rem;
+    transform: rotate(3deg);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    font-family: var(--handwriting-font);
+    font-size: 2rem;
+    color: #333;
+    z-index: 1;
+}
+
+.note-tape {
+    position: absolute;
+    width: 6rem;
+    height: 1.5rem;
+    background: rgba(255, 255, 255, 0.4);
+    top: -1rem;
+    left: 2rem;
+    transform: rotate(-5deg);
+    z-index: 2;
+    opacity: 0.7;
+}
+
+/* Handwritten class for annotations */
+.handwritten {
+    font-family: var(--handwriting-font);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--pink);
+}
+
+/* Star doodle */
+.doodle-star {
+    position: absolute;
+    top: 2rem;
+    right: 3rem;
+    font-size: 3rem;
+    color: var(--pink);
+    transform: rotate(15deg);
+}
+
+/* Pen doodle */
+.doodle-pen {
+    position: absolute;
+    bottom: -1rem;
+    right: -1rem;
+    font-size: 3rem;
+    color: var(--pink);
+    transform: rotate(12deg);
 }
 
 @media(min-width: 901px) {
@@ -536,6 +646,13 @@ body:not(.user-is-tabbing) a:focus {
 @media(max-width: 900px) {
     .work__code {
         height: 4rem;
+    }
+    
+    .handwritten-note {
+        position: relative;
+        bottom: 0;
+        right: 0;
+        margin-top: 3rem;
     }
 }
 
@@ -581,6 +698,8 @@ body:not(.user-is-tabbing) a:focus {
 .about {
     background-color: var(--black);
     color: var(--white-1);
+    /* Add subtle texture */
+    background-image: url('https://www.transparenttextures.com/patterns/black-paper.png');
 }
 
 .about h2,
@@ -611,6 +730,75 @@ body:not(.user-is-tabbing) a:focus {
 
 .about__photo-container {
     margin-bottom: var(--gutter-normal);
+    position: relative;
+}
+
+/* Photo frame styling */
+.photo-frame {
+    background: white;
+    padding: 2rem;
+    transform: rotate(2deg);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.photo-frame:hover {
+    transform: rotate(0) translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* Photo annotation */
+.photo-annotation {
+    position: absolute;
+    bottom: -3rem;
+    right: 1rem;
+    font-size: 2.4rem;
+    transform: rotate(3deg);
+    color: var(--pink);
+}
+
+/* Notebook paper styling */
+.notebook-paper {
+    background: var(--white);
+    padding: 4rem;
+    color: var(--black);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+    border-left: 4px solid var(--pink);
+    overflow: hidden;
+}
+
+.notebook-lines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.notebook-lines::before {
+    content: '';
+    position: absolute;
+    top: 4rem;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: repeating-linear-gradient(
+        transparent,
+        transparent 3.5rem,
+        #e0e0e0 3.5rem,
+        #e0e0e0 3.6rem
+    );
+}
+
+.notebook-paper p, 
+.notebook-paper a {
+    position: relative;
+    z-index: 1;
+    color: var(--black);
 }
 
 @media(min-width: 901px) {
@@ -631,6 +819,8 @@ body:not(.user-is-tabbing) a:focus {
 .contact {
     background-color: var(--light-bg);
     color: var(--black);
+    /* Add subtle texture */
+    background-image: url('https://www.transparenttextures.com/patterns/paper.png');
 }
 
 .contact h2 {
@@ -643,6 +833,30 @@ body:not(.user-is-tabbing) a:focus {
 
 .contact__info {
     max-width: var(--container-medium-width);
+    margin: 0 auto;
+}
+
+/* Post-it note styling */
+.postit-note {
+    background: var(--yellow-note);
+    padding: 4rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+    transform: rotate(-1deg);
+    transition: all 0.3s ease;
+}
+
+.postit-note:hover {
+    transform: rotate(0) translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.postit-note p {
+    color: #333;
+}
+
+.postit-note .btn {
+    margin-top: 2rem;
 }
 
 /* --------------------------------------- */
@@ -673,6 +887,11 @@ body:not(.user-is-tabbing) a:focus {
 
 .footer__social-image {
     height: 4rem;
+    transition: all 0.3s ease;
+}
+
+.footer__social-image:hover {
+    transform: scale(1.1) rotate(5deg);
 }
 
 .footer__github-buttons {
@@ -704,4 +923,165 @@ body:not(.user-is-tabbing) a:focus {
 .about .link__text:hover::after,
 .about .link__text:focus:after {
     background: var(--pink);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+
+}
+    
+
+
+.polaroid-content {
+    border: 2px solid #f0f0f0;
+    padding: 2rem;
+}
+
+.polaroid-content .heading-primary {
+    color: var(--black);
+}
+
+.polaroid-content p {
+    color: var(--black);
+}
+
+/* Pin for polaroid */
+.pin {
+    position: absolute;
+    width: 1.5rem;
+    height: 1.5rem;
+    background: var(--pink);
+    border-radius: 50%;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+    z-index: 2;
+}
+
+.pin::after {
+    content: '';
+    position: absolute;
+    width: 0.3rem;
+    height: 0.8rem;
+    background: #666;
+    left: 50%;
+    top: 100%;
+    transform: translateX(-50%);
+    border-radius: 0 0 3px 3px;
+}
+
+.pin-left {
+    top: -0.8rem;
+    left: 2rem;
+}
+
+.pin-right {
+    top: -0.8rem;
+    right: 2rem;
+}
+
+.pin-top {
+    top: -0.8rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Tape for polaroid */
+.tape {
+    position: absolute;
+    width: 8rem;
+    height: 2.5rem;
+    background: rgba(255, 255, 255, 0.3);
+    top: -1.5rem;
+    left: 50%;
+    transform: translateX(-50%) rotate(2deg);
+    z-index: 2;
+    opacity: 0.7;
+}
+
+.tape-left {
+    left: 2rem;
+    top: -1.5rem;
+    transform: rotate(-10deg);
+}
+
+.tape-photo {
+    width: 10rem;
+    transform: rotate(-10deg);
+    top: -1.5rem;
+    left: 30%;
+}
+
+/* Hand-drawn arrow */
+.hand-drawn-arrow {
+    display: flex;
+    justify-content: center;
+    margin-top: 5rem;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-20px);
+    }
+    60% {
+        transform: translateY(-10px);
+    }
+}
+
+.arrow-down {
+    stroke: var(--white);
+}
+
+@media(max-width: 500px) {
+    .header {
+        text-align: center;
+    }
+
+    .header__text p {
+        transform: scale(.8);
+    }
+    
+    .polaroid-frame {
+        padding: 1.5rem;
+    }
+    
+    .polaroid-content {
+        padding: 1.5rem;
+    }
+}
+
+/* --------------------------------------- */
+/* ----- Work ----- */
+/* --------------------------------------- */
+
+.work {
+    background-color: var(--light-bg);
+    color: var(--black);
+    position: relative;
+    /* Add subtle paper texture */
+    background-image: url('https://www.transparenttextures.com/patterns/paper.png');
+}
+
+.work h2, 
+.work h3 {
+    color: var(--black);
+}
+
+.work a {
+    color: var(--black);
+}
+
+.work__box {
+    display: flex;
+    align-items: center;
+    position: relative;
+    background: white;
+    padding: 3rem;
+    margin-top: 4rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transform: rotate(-1deg);
+    transition: all 0.3s ease;
+}
+
+.work__box:hover {
+    transform: rotate(0) translateY(-5px);
 }

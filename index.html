@@ -7,15 +7,17 @@
   <link rel="shortcut icon" type="image/png" href="./images/letter-p.svg" />
   <link href="https://fonts.googleapis.com/css2?family=Krona+One&family=Playfair&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Krona+One&display=swap" rel="stylesheet">
+  <!-- Add handwriting font for annotations -->
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap" rel="stylesheet">
 
   <!-- Put your site title here -->
   <title>
     Pranaya Yadav Palleboyina | UI/UX Designer.
   </title>
 
-  <meta name="description" content="Add small description of yourslef.">
+  <meta name="description" content="UI/UX Designer with a focus on creating delightful digital experiences.">
   <!-- Add some coding keywords below, Ex: (React, CSS etc) -->
-  <meta name="keywords" content="Put your name, skills and some coding keywords" />
+  <meta name="keywords" content="UI/UX Designer, Pranaya Yadav, Portfolio, User Experience, Design, UX Research" />
   <link rel="stylesheet" href="index.css" />
 </head>
 <body>
@@ -27,7 +29,6 @@
       <nav class="nav" role="navigation">
         <ul class="nav__items">
           <li class="nav__item"><a href="#work" class="nav__link">Work</a></li>
-          <!--<li class="nav__item"><a href="#clients" class="nav__link">Clients</a></li>-->
           <li class="nav__item">
             <a href="#about" class="nav__link">About</a>
           </li>
@@ -39,11 +40,33 @@
     </div>
     <div class="header__text-box row">
       <div class="header__text">
-        <h1 class="heading-primary">
-          <span>Hello World, <br>I'm Pranaya Yadav</span>
-        </h1>
-        <p>a UI/UX Designer.</p>
+        <!-- Add polaroid frame for name -->
+        <div class="polaroid-frame">
+          <!-- Add push pin element -->
+          <div class="pin"></div>
+          <!-- Add tape element -->
+          <div class="tape"></div>
+          <div class="polaroid-content">
+            <h1 class="heading-primary">
+              <span>Hello World, <br>I'm Pranaya Yadav</span>
+            </h1>
+            <p>a UI/UX Designer.</p>
+          </div>
+        </div>
         <a href="#contact" class="btn btn--pink">Get in touch</a>
+        <!-- Add hand-drawn arrow -->
+        <div class="hand-drawn-arrow">
+          <svg width="40" height="40" viewBox="0 0 24 24" class="arrow-down">
+            <path 
+              d="M12 4 L10 6 L11 6 L11 16 L8 13 L7 14 L12 19 L17 14 L16 13 L13 16 L13 6 L14 6 L12 4" 
+              fill="none" 
+              stroke="white" 
+              stroke-width="1.5" 
+              stroke-linecap="round" 
+              stroke-linejoin="round"
+            />
+          </svg>
+        </div>
       </div>
     </div>
   </header>
@@ -55,11 +78,15 @@
     <section class="work" id="work">
       <div class="row">
         <h2>My Work</h2>
+        <!-- Add hand-drawn star doodle -->
+        <div class="doodle-star">✺</div>
         <div class="work__boxes">
 
           <!-- Each div with the work__box class is a project. -->
 
           <div class="work__box">
+            <!-- Add pin element -->
+            <div class="pin pin-left"></div>
             <div class="work__text">
               <h3>Jenkins</h3>
               <p>
@@ -76,18 +103,32 @@
               </div>
             </div>
             <div class="work__image-box">
-              <img src="./images/Jenkins_header.png" class="work__image" alt="Project 1" />
+              <!-- Add Polaroid frame around image -->
+              <div class="polaroid-image">
+                <img src="./images/Jenkins_header.png" class="work__image" alt="Project 1" />
+                <div class="polaroid-caption">
+                  <span class="handwritten">Jenkins Success Stories</span>
+                </div>
+              </div>
+            </div>
+            <!-- Add handwritten note -->
+            <div class="handwritten-note">
+              <div class="note-tape"></div>
+              <p>This was an exciting project to work on!</p>
             </div>
           </div>
 
           <div class="work__box">
+            <!-- Add paper clip element -->
+            <div class="paperclip"></div>
+            <!-- Add pin element -->
+            <div class="pin pin-right"></div>
             <div class="work__text">
               <h3>FREAKINS</h3>
               <p>
                 Redesign of FREAKINS Mobile App <br>- a UI/UX Case Study
               </p>
             
-
               <div class="work__links">
                 <a href="https://www.behance.net/gallery/160670149/FREAKINS-redesign-case-study" class="link__text">
                   Visit Project <span>&rarr;</span>
@@ -98,11 +139,19 @@
               </div>
             </div>
             <div class="work__image-box">
-              <img src="./images/Freakins_mockup.png" class="work__image" alt="Project 3" />
+              <!-- Add Polaroid frame around image -->
+              <div class="polaroid-image">
+                <img src="./images/Freakins_mockup.png" class="work__image" alt="Project 3" />
+                <div class="polaroid-caption">
+                  <span class="handwritten">FREAKINS App</span>
+                </div>
+              </div>
             </div>
           </div>
 
           <div class="work__box">
+            <!-- Add tape element -->
+            <div class="tape tape-left"></div>
             <div class="work__text">
               <h3>ZombiNation</h3>
               <p>
@@ -119,30 +168,18 @@
               </div>
             </div>
             <div class="work__image-box">
-              <img src="./images/ZombiNation_Mockup.png" class="work__image" alt="Project 1" />
+              <!-- Add Polaroid frame around image -->
+              <div class="polaroid-image">
+                <img src="./images/ZombiNation_Mockup.png" class="work__image" alt="Project 1" />
+                <div class="polaroid-caption">
+                  <span class="handwritten">ZombiNation</span>
+                </div>
+              </div>
             </div>
           </div>
-
-        
         </div>
       </div>
     </section>
-
-    <!-- ***** Clients 
-
-    <section class="client" id="clients">
-      <div class="row">
-        <h2>Clients</h2>
-        <div class="client__logos">
-          <img src="./images/ronjones.png" class="client__logo" alt="Company 2" />
-          <img src="./images/goldengrid.png" class="client__logo" alt="Company 3" />
-          <img src="./images/bullseye.png" class="client__logo" alt="Company 1" />
-          <img src="./images/mighty-furnitures.png" class="client__logo" alt="Company 1" />
-          <img src="./images/fastlane.png" class="client__logo" alt="Company 3" />
-          <img src="./images/chippy.png" class="client__logo" alt="Company 1" />
-        </div>
-      </div>
-    </section> ***** -->
 
     <!-- ***** About ***** -->
 
@@ -150,7 +187,11 @@
       <div class="row">
         <h2>About Me</h2>
         <div class="about__content">
-          <div class="about__text">
+          <div class="about__text notebook-paper">
+            <!-- Add ruled lines -->
+            <div class="notebook-lines"></div>
+            <!-- Add paperclip element -->
+            <div class="paperclip paperclip-red"></div>
             <!-- Replace the below paragraph with info about yourself -->
             <p>
               Hi there! <br><br>
@@ -164,8 +205,14 @@
           </div>
 
           <div class="about__photo-container">
-            <!-- Add a nice photo of yourself -->
-            <img class="about__photo" src="./images/Me.jpeg" alt="" />
+            <!-- Add photo with paper frame effect -->
+            <div class="photo-frame">
+              <!-- Add tape element -->
+              <div class="tape tape-photo"></div>
+              <img class="about__photo" src="./images/Me.jpeg" alt="" />
+            </div>
+            <!-- Add handwritten annotation -->
+            <div class="handwritten photo-annotation">↑ That's me!</div>
           </div>
         </div>
       </div>
@@ -177,14 +224,17 @@
   <section class="contact" id="contact">
     <div class="row">
       <h2>Get in Touch</h2>
-      <div class="contact__info">
+      <div class="contact__info postit-note">
+        <!-- Add push pin -->
+        <div class="pin pin-top"></div>
         <p>
-          Have a project in mind or just want to say "Hi 👋" ? I'd love to hear from you! Drop me an email or mobile. 
+          Have a project in mind or just want to say "Hi 👋" ? I'd love to hear from you! Drop me an email. 
           <br>Whether you're looking for design collaboration or just sharing ideas, I'm always happy to chat. Let's create something wonderful together! 😊
         </p>
         <!-- Replace the email with yours -->
         <a href="mailto:p.palleboyina@ufl.edu" class="btn">p.palleboyina@ufl.edu</a>
-        <a href="tel:+18303692414" class="btn">+1 830-369-2414</a>
+        <!-- Add doodle -->
+        <div class="doodle-pen">✎</div>
       </div>
     </div>
   </section>
