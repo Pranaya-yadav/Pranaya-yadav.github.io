@@ -2,7 +2,7 @@
   Have focus outline only for keyboard users 
  ---------------------------------------- */
 
- const handleFirstTab = (e) => {
+const handleFirstTab = (e) => {
   if(e.key === 'Tab') {
     document.body.classList.add('user-is-tabbing')
 
@@ -48,6 +48,31 @@ window.addEventListener("scroll", () => {
 /* -----------------------------------------
   Scrapbook-style Interactions
  ---------------------------------------- */
+ document.addEventListener('DOMContentLoaded', function() {
+  const contactBtn = document.querySelector('.contact-note .btn');
+  const contactNote = document.querySelector('.contact-note');
+  
+  if (contactBtn && contactNote) {
+    contactBtn.addEventListener('click', function(e) {
+      e.preventDefault(); // Prevent default link behavior
+      
+      // Add falling animation class
+      contactNote.classList.add('falling');
+      
+      // Scroll to contact section after a delay
+      setTimeout(function() {
+        document.querySelector('#contact').scrollIntoView({ 
+          behavior: 'smooth'
+        });
+        
+        // Remove falling class when animation completes
+        setTimeout(function() {
+          contactNote.classList.remove('falling');
+        }, 1000);
+      }, 500);
+    });
+  }
+});
 
 // Add slight random rotation to pinned elements
 document.addEventListener('DOMContentLoaded', () => {

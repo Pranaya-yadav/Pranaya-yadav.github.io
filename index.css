@@ -33,9 +33,11 @@
     --font-size-medium-1: 3.6rem;
     --font-size-large: 5.5rem;
     --font-size-huge: 7.5rem;
-    --font-stack: 'Jost', 'Nunito Sans', sans-serif; /* Using Jost as primary */
+    --dark-font: 'Chalkduster', 'Caveat', cursive; /* Dark background font */
+    --light-font: 'Gloria Hallelujah', cursive; /* Light background font */
+    --font-stack: 'Jost', 'Nunito Sans', sans-serif; /* For compatibility */
     --heading-font: 'Krona One', sans-serif;  /* Krona One for headings */
-    --handwriting-font: 'Caveat', cursive; /* Handwriting font for annotations */
+    --handwriting-font: 'Caveat', cursive;
 
     --line-height-normal: 1.7;
     --line-height-small: 1.2;
@@ -134,21 +136,46 @@ h3 {
     line-height: var(--line-height-small);
     color: var(--white);
 }
+/* For all dark background sections - header, about, footer */
+.header, .about, .footer {
+    font-family: var(--dark-font);
+}
 
+/* For headings in dark sections */
+.header h1, .header h2, .header h3,
+.about h1, .about h2, .about h3,
+.footer h1, .footer h2, .footer h3 {
+    font-family: var(--dark-font);
+}
+/* For all light background sections - work, contact */
+.work, .contact {
+    font-family: var(--light-font);
+}
+
+/* For headings in light sections */
+.work h1, .work h2, .work h3,
+.contact h1, .contact h2, .contact h3 {
+    font-family: var(--light-font);
+}
+
+/* For all buttons and links in light sections */
+.work a, .work .btn,
+.contact a, .contact .btn {
+    font-family: var(--light-font);
+}
 /* Special styles for specific headings - all section titles use Krona One now */
 .header .heading-primary,
 .work h2,
 .about h2,
 .contact h2 {
-    font-family: var(--heading-font);
     line-height: 1.1;
     font-weight: 400;
 }
-
-/* Project titles also use Krona One */
-.work h3 {
-    font-family: var(--heading-font);
+.header, .about {
+    font-family: var(--dark-font);
 }
+
+
 
 .header .heading-primary {
     font-size: var(--font-size-huge);
@@ -212,7 +239,6 @@ p {
 a {
     color: var(--white);
     font-weight: 400;
-    font-family: var(--font-stack);
     transition: all .2s;
     outline: 2px solid transparent;
 }
@@ -243,8 +269,7 @@ body:not(.user-is-tabbing) a:focus {
     color: inherit;
     border: 1px solid  var(--pink);
     font-weight: 400;
-    transform: rotate(-1deg); /* Added rotation for scrapbook feel */
-    transition: all 0.3s;
+    
 }
 
 .btn:focus {
@@ -262,31 +287,6 @@ body:not(.user-is-tabbing) a:focus {
     height: 100%;
     z-index: -1;
     transition: all 0.2s cubic-bezier(1, 0.68, 0.16, 0.9);
-}
-
-.btn:hover::after,
-.btn:focus::after {
-    right: 0;
-    background: var(--pink);
-}
-
-.btn:hover {
-    transform: rotate(0); /* Straighten on hover */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
-}
-
-.btn--pink {
-    background: var(--pink);
-    transition: all 0.2s;
-}
-
-.btn--pink::after {
-    display: none;
-}
-
-.btn--pink:hover,
-.btn--pink:focus {
-    background: transparent;
 }
 
 .link__text {
@@ -323,7 +323,6 @@ body:not(.user-is-tabbing) a:focus {
 
 .link__text span {
     padding-left: 1rem;
-    font-family: var(--font-stack);
 }
 
 /* ----- Back to Top ----- */
@@ -373,6 +372,7 @@ body:not(.user-is-tabbing) a:focus {
 .nav__items {
     display: flex;
     list-style: none;
+    font-family: var(--dark-font);
 }
 
 .nav__item:not(:last-child) {
@@ -419,13 +419,13 @@ body:not(.user-is-tabbing) a:focus {
 }
 
 .nav__link:hover {
-    color: var(--pink);
+    color: var(--white);
 }
 
 .nav__link:hover::after {
     right: 0;
     height: 2px;
-    background: var(--pink);
+    background: var(--white);
 }
 
 /* --------------------------------------- */
@@ -434,7 +434,7 @@ body:not(.user-is-tabbing) a:focus {
 
 .header {
     background: linear-gradient(rgba(0,0,0, .1), rgba(0,0,0, .4)), 
-        url('./images/header.jpg');
+        url('./images/chalkboard.png');
     height: 100vh;
     background-size: cover;
     background-position: center;
@@ -444,16 +444,138 @@ body:not(.user-is-tabbing) a:focus {
     background-color: var(--black);
 }
 
+/* Updated header styles */
 .header__text {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
+    left: 10%;
+    width: 80%;
+  }
+  
+  .header__text h1 {
+    font-size: var(--font-size-huge);
+    margin-bottom: 6rem;
+    font-family: var(--dark-font);
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+  }
+  
+  .taped-note {
+    background: white;
+    display: inline-block;
+    position: relative;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    margin-right: 3rem;
+    padding: 1rem 5rem;
+    width: fit-content;
+  }
+  
+  .taped-note .tape {
+    position: absolute;
+    width: 7rem;
+    height: 2rem;
+    background: rgba(255, 255, 255, 0.4);
+    top: -1.7rem;
+    left: 50%;
+    transform: translateX(-50%) rotate(-5deg);
+    z-index: 2;
+    opacity: 0.7;
+  }
+  
+  
+  .taped-note p {
+    font-family: var(--light-font);
+    color: var(--pink);
+    font-size: 2.4rem;
+    margin: 0;
+  }
+  .profession {
+    padding-top: 1rem;
+
+  }
+  
+  .profession-note {
+    transform: rotate(-3deg);
+    margin-bottom: 2rem;
+    padding-bottom: -1rem;
+  }
+  @keyframes swing {
+    0% { transform: rotate(2deg); }
+    25% { transform: rotate(5deg); }
+    50% { transform: rotate(1deg); }
+    75% { transform: rotate(3deg); }
+    100% { transform: rotate(2deg); }
+  }
+  .contact-note:hover {
+    animation: swing 1s ease-in-out;
+  }
+  /* Falling animation for the contact note */
+@keyframes fall {
+    0% { 
+      transform: rotate(2deg); 
+      opacity: 1;
+      top: auto;
+    }
+    100% { 
+      transform: rotate(45deg) translateY(200vh);
+      opacity: 0.7;
+    }
+  }
+  
+  .falling {
+    animation: fall 1.5s ease-in forwards;
+    position: fixed;
+    z-index: 100;
+  }
+  
+  .chalk-piece {
+    position: absolute;
+    width: 500px;
+    height: 50px;
+    /*left: 1107px;
+    top: 1131px;*/
+    background: white;
+    border-radius: 15px 5px 8px 30px;
+    bottom: -30.4rem;
+    left: 75%;
+    transform: translateX(-50%) rotate(0deg);
+    box-shadow: inset 0px -10px 15px rgba(0, 0, 0, 0.25), inset 0px 10px 15px rgba(0, 0, 0, 0.25);
 }
+  
+  .contact-note .btn {
+    border: none;
+    background: none;
+    color: var(--pink);
+    font-family: var(--light-font);
+    font-size: 2.4rem;
+    padding: 0;
+    margin: 0;
+  }
+  
+
+ 
+  
+  /* Responsive adjustments */
+  @media(max-width: 768px) {
+    .header__text {
+      text-align: center;
+      left: 5%;
+      width: 90%;
+    }
+    
+    .header__text h1 {
+      font-size: var(--font-size-large);
+    }
+    
+    .taped-note {
+      margin: 1rem;
+    }
+  }
 
 .header__text p {
     margin: 1.5rem 0 3.5rem;
     max-width: var(--container-medium-width);
-    font-family: var(--font-stack);
     font-size: var(--font-size-medium);
 }
 
@@ -511,6 +633,7 @@ body:not(.user-is-tabbing) a:focus {
     margin-left: var(--gutter-normal);
     transition: all .3s;
 }
+
 
 .work__code:hover {
     transform: scale(1.2);
@@ -590,7 +713,7 @@ body:not(.user-is-tabbing) a:focus {
     max-width: 20rem;
     transform: rotate(3deg);
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-    font-family: var(--handwriting-font);
+    font-family: var(--light-font);
     font-size: 2rem;
     color: #333;
     z-index: 1;
@@ -610,7 +733,7 @@ body:not(.user-is-tabbing) a:focus {
 
 /* Handwritten class for annotations */
 .handwritten {
-    font-family: var(--handwriting-font);
+    font-family: var(--light-font);
     font-size: 2rem;
     font-weight: 700;
     color: var(--pink);
@@ -696,10 +819,9 @@ body:not(.user-is-tabbing) a:focus {
 /* --------------------------------------- */
 
 .about {
-    background-color: var(--black);
-    color: var(--white-1);
+    background: linear-gradient(rgba(0,0,0, .1), rgba(0,0,0, .4)), 
+    url('./images/chalkboard.png');    color: var(--white-1);
     /* Add subtle texture */
-    background-image: url('https://www.transparenttextures.com/patterns/black-paper.png');
 }
 
 .about h2,

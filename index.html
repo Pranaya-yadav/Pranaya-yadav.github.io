@@ -5,10 +5,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="shortcut icon" type="image/png" href="./images/letter-p.svg" />
+
   <link href="https://fonts.googleapis.com/css2?family=Krona+One&family=Playfair&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Krona+One&display=swap" rel="stylesheet">
-  <!-- Add handwriting font for annotations -->
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap" rel="stylesheet">
 
   <!-- Put your site title here -->
   <title>
@@ -24,52 +25,44 @@
 
   <!-- ***** Header ***** -->
 
-  <header class="header" role="banner" id="top">
-    <div class="row">
-      <nav class="nav" role="navigation">
-        <ul class="nav__items">
-          <li class="nav__item"><a href="#work" class="nav__link">Work</a></li>
-          <li class="nav__item">
-            <a href="#about" class="nav__link">About</a>
-          </li>
-          <li class="nav__item">
-            <a href="#contact" class="nav__link">Contact</a>
-          </li>
-        </ul>
-      </nav>
-    </div>
-    <div class="header__text-box row">
-      <div class="header__text">
-        <!-- Add polaroid frame for name -->
-        <div class="polaroid-frame">
-          <!-- Add push pin element -->
-          <div class="pin"></div>
-          <!-- Add tape element -->
-          <div class="tape"></div>
-          <div class="polaroid-content">
-            <h1 class="heading-primary">
-              <span>Hello World, <br>I'm Pranaya Yadav</span>
-            </h1>
-            <p>a UI/UX Designer.</p>
-          </div>
-        </div>
-        <a href="#contact" class="btn btn--pink">Get in touch</a>
-        <!-- Add hand-drawn arrow -->
-        <div class="hand-drawn-arrow">
-          <svg width="40" height="40" viewBox="0 0 24 24" class="arrow-down">
-            <path 
-              d="M12 4 L10 6 L11 6 L11 16 L8 13 L7 14 L12 19 L17 14 L16 13 L13 16 L13 6 L14 6 L12 4" 
-              fill="none" 
-              stroke="white" 
-              stroke-width="1.5" 
-              stroke-linecap="round" 
-              stroke-linejoin="round"
-            />
-          </svg>
-        </div>
+<!-- Updated header section -->
+<header class="header" role="banner" id="top">
+  <div class="row">
+    <nav class="nav" role="navigation">
+      <ul class="nav__items">
+        <li class="nav__item"><a href="#work" class="nav__link">Work</a></li>
+        <li class="nav__item">
+          <a href="#about" class="nav__link">About</a>
+        </li>
+        <li class="nav__item">
+          <a href="#contact" class="nav__link">Contact</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  <div class="header__text-box row">
+    <div class="header__text">
+      <h1 class="heading-primary">
+        <span>Hello, I'm Pranaya :)</span>
+      </h1>
+      
+      <!-- Small taped note for profession -->
+      <div class="taped-note profession-note">
+        <div class="tape"></div>
+        <p class="profession">a UI/UX Designer</p>
       </div>
+      
+      <!-- Small taped note for contact button -->
+      <div class="taped-note contact-note">
+        <div class="tape"></div>
+        <a href="#contact" class="btn">Get in touch</a>
+      </div>
+      
+      <!-- Add chalk at bottom -->
+      <div class="chalk-piece"></div>
     </div>
-  </header>
+  </div>
+</header>
 
   <main role="main">
 
