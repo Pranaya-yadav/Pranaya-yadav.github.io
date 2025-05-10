@@ -35,19 +35,19 @@
     --font-size-huge: 7.5rem;
     --dark-font: 'Chalkduster', 'Caveat', cursive; /* Dark background font */
     --light-font: 'Gloria Hallelujah', cursive; /* Light background font */
-    --font-stack: 'Jost', 'Nunito Sans', sans-serif; /* For compatibility */
-    --heading-font: 'Krona One', sans-serif;  /* Krona One for headings */
+    --font-stack: 'Jost', 'Nunito Sans', sans-serif; 
+    --heading-font: 'Krona One', sans-serif; 
     --handwriting-font: 'Caveat', cursive;
 
     --line-height-normal: 1.7;
     --line-height-small: 1.2;
 
     --black: #000;
-    --light-bg: #EBEBE6; /* Light background color */
+    --light-bg: #EBEBE6; 
     --pink: #9A0100;
     --white: #f0e9f2;
     --white-1: #e5e5e6da;
-    --yellow-note: #fefabc; /* Post-it note color */
+    --yellow-note: #fefabc;
 
     --container-max-width: 1180px;
     --container-normal-width: 800px;
@@ -64,7 +64,7 @@
 }
 
 html {
-    font-size: 62.5%; /* (16/10)*100 = 62.5% => 1rem = 10px */
+    font-size: 62.5%; 
     box-sizing: border-box;
     scroll-behavior: smooth;
 }
@@ -108,12 +108,6 @@ body {
     }
 }
 
-@media(max-width: 600px) {
-    .row {
-        padding: 0 var(--gutter-small);
-    }
-}
-
 section {
     padding: var(--gutter-huge) 0;
     border-bottom: var(--border-light);
@@ -136,34 +130,28 @@ h3 {
     line-height: var(--line-height-small);
     color: var(--white);
 }
-/* For all dark background sections - header, about, footer */
 .header, .about, .footer {
     font-family: var(--dark-font);
 }
 
-/* For headings in dark sections */
 .header h1, .header h2, .header h3,
 .about h1, .about h2, .about h3,
 .footer h1, .footer h2, .footer h3 {
     font-family: var(--dark-font);
 }
-/* For all light background sections - work, contact */
 .work, .contact {
     font-family: var(--light-font);
 }
 
-/* For headings in light sections */
 .work h1, .work h2, .work h3,
 .contact h1, .contact h2, .contact h3 {
     font-family: var(--light-font);
 }
 
-/* For all buttons and links in light sections */
 .work a, .work .btn,
 .contact a, .contact .btn {
     font-family: var(--light-font);
 }
-/* Special styles for specific headings - all section titles use Krona One now */
 .header .heading-primary,
 .work h2,
 .about h2,
@@ -191,7 +179,7 @@ h3 {
 h2 {
     font-size: var(--font-size-large);
     margin-bottom: var(--gutter-medium);
-    position: relative; /* Added for scrapbook doodles */
+    position: relative; 
 }
 
 h2::after {
@@ -292,7 +280,7 @@ body:not(.user-is-tabbing) a:focus {
 .link__text {
     position: relative;
     display: inline-block;
-    padding: .6rem;
+    padding: 9rem;
     color: inherit;
     text-decoration: none;
     border-bottom: 1px solid var(--pink);
@@ -325,7 +313,6 @@ body:not(.user-is-tabbing) a:focus {
     padding-left: 1rem;
 }
 
-/* ----- Back to Top ----- */
 
 .back-to-top {
     position: fixed;
@@ -444,7 +431,6 @@ body:not(.user-is-tabbing) a:focus {
     background-color: var(--black);
 }
 
-/* Updated header styles */
 .header__text {
     position: absolute;
     top: 50%;
@@ -490,16 +476,8 @@ body:not(.user-is-tabbing) a:focus {
     font-size: 2.4rem;
     margin: 0;
   }
-  .profession {
-    padding-top: 1rem;
 
-  }
   
-  .profession-note {
-    transform: rotate(-3deg);
-    margin-bottom: 2rem;
-    padding-bottom: -1rem;
-  }
   @keyframes swing {
     0% { transform: rotate(2deg); }
     25% { transform: rotate(5deg); }
@@ -510,7 +488,6 @@ body:not(.user-is-tabbing) a:focus {
   .contact-note:hover {
     animation: swing 1s ease-in-out;
   }
-  /* Falling animation for the contact note */
 @keyframes fall {
     0% { 
       transform: rotate(2deg); 
@@ -533,11 +510,9 @@ body:not(.user-is-tabbing) a:focus {
     position: absolute;
     width: 500px;
     height: 50px;
-    /*left: 1107px;
-    top: 1131px;*/
     background: white;
     border-radius: 15px 5px 8px 30px;
-    bottom: -30.4rem;
+    bottom: -28.8rem;
     left: 75%;
     transform: translateX(-50%) rotate(0deg);
     box-shadow: inset 0px -10px 15px rgba(0, 0, 0, 0.25), inset 0px 10px 15px rgba(0, 0, 0, 0.25);
@@ -554,9 +529,6 @@ body:not(.user-is-tabbing) a:focus {
   }
   
 
- 
-  
-  /* Responsive adjustments */
   @media(max-width: 768px) {
     .header__text {
       text-align: center;
@@ -579,7 +551,6 @@ body:not(.user-is-tabbing) a:focus {
     font-size: var(--font-size-medium);
 }
 
-/* Polaroid frame for name */
 .polaroid-frame {
     background: white;
     padding: 2rem;
@@ -603,6 +574,8 @@ body:not(.user-is-tabbing) a:focus {
     }
 }
 
+
+
 .work__box:not(:last-child) {
     margin-bottom: 25rem;
 }
@@ -620,6 +593,7 @@ body:not(.user-is-tabbing) a:focus {
 
 .work__text {
     flex: 0 0 30%;
+    padding-left: 100px;
 }
 
 .work__list {
@@ -644,7 +618,6 @@ body:not(.user-is-tabbing) a:focus {
     position: relative;
 }
 
-/* Polaroid image styling for projects */
 .polaroid-image {
     background: white;
     padding: 1.5rem 1.5rem 4rem 1.5rem;
@@ -663,7 +636,6 @@ body:not(.user-is-tabbing) a:focus {
     margin-top: 1rem;
 }
 
-/* Paperclip styling */
 .paperclip {
     position: absolute;
     top: -2rem;
@@ -703,18 +675,18 @@ body:not(.user-is-tabbing) a:focus {
     background: var(--pink);
 }
 
-/* Handwritten note styling */
 .handwritten-note {
     position: absolute;
     bottom: -5rem;
     right: -2rem;
     background: var(--yellow-note);
     padding: 1.5rem;
+    padding-left: 4rem;
     max-width: 20rem;
     transform: rotate(3deg);
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
     font-family: var(--light-font);
-    font-size: 2rem;
+    font-size: 1.6rem;
     color: #333;
     z-index: 1;
 }
@@ -731,7 +703,6 @@ body:not(.user-is-tabbing) a:focus {
     opacity: 0.7;
 }
 
-/* Handwritten class for annotations */
 .handwritten {
     font-family: var(--light-font);
     font-size: 2rem;
@@ -739,7 +710,6 @@ body:not(.user-is-tabbing) a:focus {
     color: var(--pink);
 }
 
-/* Star doodle */
 .doodle-star {
     position: absolute;
     top: 2rem;
@@ -749,7 +719,6 @@ body:not(.user-is-tabbing) a:focus {
     transform: rotate(15deg);
 }
 
-/* Pen doodle */
 .doodle-pen {
     position: absolute;
     bottom: -1rem;
@@ -795,7 +764,7 @@ body:not(.user-is-tabbing) a:focus {
 .client__logos {
     display: flex;
     justify-content: space-between;
-    filter: invert(0%); /* Changed - no need to invert on light background */
+    filter: invert(0%); 
 }
 
 .client__logo {
@@ -820,8 +789,8 @@ body:not(.user-is-tabbing) a:focus {
 
 .about {
     background: linear-gradient(rgba(0,0,0, .1), rgba(0,0,0, .4)), 
-    url('./images/chalkboard.png');    color: var(--white-1);
-    /* Add subtle texture */
+    url('./images/chalkboard.png');    
+    color: var(--white-1);
 }
 
 .about h2,
@@ -834,28 +803,34 @@ body:not(.user-is-tabbing) a:focus {
 }
 
 .about h2::after {
-    background: var(--pink);
+    display: none; 
 }
 
 .about__content {
     display: flex;
-    flex-direction: row-reverse;
-    align-items: center;
-}
-
-@media(max-width: 900px) {
-    .about__content {
-        flex-direction: column-reverse;
-        align-items: initial;
-    }
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 4rem;
+    margin-top: 3rem;
+    justify-content: center; 
+    max-width: 1200px; 
+    margin-left: auto; 
+    margin-right: auto; 
 }
 
 .about__photo-container {
-    margin-bottom: var(--gutter-normal);
+    flex: 0 0 40%;
     position: relative;
+    margin-right: 2rem;
+    max-width: 500px; 
 }
 
-/* Photo frame styling */
+.about__text {
+    flex: 0 0 55%;
+    display: block;
+    max-width: 600px; 
+}
+
 .photo-frame {
     background: white;
     padding: 2rem;
@@ -863,6 +838,7 @@ body:not(.user-is-tabbing) a:focus {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     position: relative;
     transition: all 0.3s ease;
+    width: 100%; 
 }
 
 .photo-frame:hover {
@@ -870,67 +846,122 @@ body:not(.user-is-tabbing) a:focus {
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
 }
 
-/* Photo annotation */
+.about__photo {
+    width: 100%; 
+    height: auto;
+}
+
 .photo-annotation {
     position: absolute;
-    bottom: -3rem;
-    right: 1rem;
-    font-size: 2.4rem;
+    bottom: -6rem; 
+    right: 3rem; 
     transform: rotate(3deg);
-    color: var(--pink);
+    color: var(--white); 
+    z-index: 1; 
 }
-
-/* Notebook paper styling */
-.notebook-paper {
-    background: var(--white);
-    padding: 4rem;
-    color: var(--black);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+.annotation-text {
+    font-family: var(--dark-font);
+    font-size: 3rem;
+    color: var(--white);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+    display: inline-block;
     position: relative;
-    border-left: 4px solid var(--pink);
-    overflow: hidden;
 }
 
-.notebook-lines {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    pointer-events: none;
-    z-index: 0;
-}
-
-.notebook-lines::before {
+.photo-annotation:before {
     content: '';
     position: absolute;
-    top: 4rem;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: repeating-linear-gradient(
-        transparent,
-        transparent 3.5rem,
-        #e0e0e0 3.5rem,
-        #e0e0e0 3.6rem
-    );
+    width: 60px;
+    height: 60px;
+    border: 5px solid var(--white);
+    border-color: transparent transparent transparent var(--white);
+    border-radius: 50%;
+    transform: rotate(-45deg);
+    left: -55px;
+    top: -40px;
+    z-index: -1;
 }
 
-.notebook-paper p, 
-.notebook-paper a {
+.yellow-note {
+    background: var(--yellow-note);
+    width: 100%;
+    padding: 3rem;
+    box-sizing: border-box; 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     position: relative;
-    z-index: 1;
-    color: var(--black);
+    transition: all 0.3s ease;
+    color: #333;
+    font-family: 'Gloria Hallelujah', cursive;
+    font-size: 1.7rem;
+    line-height: 1.5;
+    display: block;
 }
 
-@media(min-width: 901px) {
+.yellow-note:hover {
+    transform: rotate(0) translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.resume-btn {
+    font-family: 'Gloria Hallelujah', cursive;
+    border: none;
+    background: white;
+    color: var(--pink) !important;
+    font-size: 2rem;
+    font-weight: 700;
+    padding: 0.8rem 2rem;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    transform: rotate(-2deg);
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.resume-btn-container {
+    text-align: right;
+    margin-top: 2rem;
+    display: block;
+}
+
+@keyframes button-swing {
+    0% { transform: rotate(-1deg); }
+    25% { transform: rotate(1deg); }
+    50% { transform: rotate(-0.5deg); }
+    75% { transform: rotate(0.5deg); }
+    100% { transform: rotate(-1deg); }
+}
+
+.resume-btn:hover {
+    animation: button-swing 1s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive adjustments */
+@media(max-width: 900px) {
+    .about__content {
+        flex-direction: column;
+        align-items: center; 
+    }
+    
+    .about__photo-container,
     .about__text {
-        flex: 0 0 35%;
+        flex: 0 0 100%;
+        width: 100%;
+        max-width: 500px; 
     }
     
     .about__photo-container {
-        flex: 1;
-        margin: 0 var(--gutter-huge) 0 0;
+        margin-bottom: 5rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .photo-annotation {
+        position: relative;
+        bottom: 0;
+        right: 0;
+        margin-top: 2rem;
+        text-align: center;
     }
 }
 
@@ -941,7 +972,6 @@ body:not(.user-is-tabbing) a:focus {
 .contact {
     background-color: var(--light-bg);
     color: var(--black);
-    /* Add subtle texture */
     background-image: url('https://www.transparenttextures.com/patterns/paper.png');
 }
 
@@ -956,9 +986,9 @@ body:not(.user-is-tabbing) a:focus {
 .contact__info {
     max-width: var(--container-medium-width);
     margin: 0 auto;
+    
 }
 
-/* Post-it note styling */
 .postit-note {
     background: var(--yellow-note);
     padding: 4rem;
@@ -980,6 +1010,49 @@ body:not(.user-is-tabbing) a:focus {
 .postit-note .btn {
     margin-top: 2rem;
 }
+
+.profession-note {
+    background: var(--yellow-note);
+    display: inline-block;
+    padding: 5rem 3rem;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    transform: rotate(-3deg) !important;
+    margin-bottom: 2rem;
+    margin-right: 5rem;
+    position: relative;
+    transition: none !important;
+    width: fit-content;
+}
+  
+  .profession-note p {
+    font-family: var(--light-font);
+    font-size: 2.4rem;
+    margin: 0;
+    padding: 0;
+  }
+  .pin-postit {
+    position: absolute;
+    width: 1.5rem;
+    height: 1.5rem;
+    background: var(--pink);
+    border-radius: 50%;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+    z-index: 3;
+    top: -0.5rem;
+    left: 1rem;
+  }
+  
+  .pin-postit::after {
+    content: '';
+    position: absolute;
+    width: 0.3rem;
+    height: 0.8rem;
+    background: #666;
+    left: 50%;
+    top: 100%;
+    transform: translateX(-50%);
+    border-radius: 0 0 3px 3px;
+  }
 
 /* --------------------------------------- */
 /* ----- Footer ----- */
@@ -1033,7 +1106,6 @@ body:not(.user-is-tabbing) a:focus {
     } 
 }
 
-/* Fix hover states */
 .work .link__text:hover::after,
 .work .link__text:focus:after,
 .contact .link__text:hover::after,
@@ -1041,15 +1113,11 @@ body:not(.user-is-tabbing) a:focus {
     background: var(--pink);
 }
 
-/* About section hover states (dark background) */
 .about .link__text:hover::after,
 .about .link__text:focus:after {
     background: var(--pink);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-
 }
-    
-
 
 .polaroid-content {
     border: 2px solid #f0f0f0;
@@ -1064,7 +1132,6 @@ body:not(.user-is-tabbing) a:focus {
     color: var(--black);
 }
 
-/* Pin for polaroid */
 .pin {
     position: absolute;
     width: 1.5rem;
@@ -1103,7 +1170,6 @@ body:not(.user-is-tabbing) a:focus {
     transform: translateX(-50%);
 }
 
-/* Tape for polaroid */
 .tape {
     position: absolute;
     width: 8rem;
@@ -1129,7 +1195,6 @@ body:not(.user-is-tabbing) a:focus {
     left: 30%;
 }
 
-/* Hand-drawn arrow */
 .hand-drawn-arrow {
     display: flex;
     justify-content: center;
@@ -1179,7 +1244,6 @@ body:not(.user-is-tabbing) a:focus {
     background-color: var(--light-bg);
     color: var(--black);
     position: relative;
-    /* Add subtle paper texture */
     background-image: url('https://www.transparenttextures.com/patterns/paper.png');
 }
 
@@ -1207,3 +1271,138 @@ body:not(.user-is-tabbing) a:focus {
 .work__box:hover {
     transform: rotate(0) translateY(-5px);
 }
+
+.work__links .link__text {
+  position: relative;
+  display: inline-block;
+  background: white;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 2px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transform: rotate(-1deg);
+  transition: all 0.3s ease;
+  margin-bottom: 1rem;
+  text-decoration: none;
+  color: var(--pink);
+  font-family: var(--light-font);
+  font-size: 1.6rem;
+}
+
+.work__links .link__text::before {
+    content: '';
+    position: absolute;
+    width: 4rem;
+    height: 1rem;
+    background: rgba(255, 255, 255, 0.5);
+    top: -0.6rem;
+    left: 0.8rem;
+    transform: rotate(-5deg);
+    z-index: 2;
+    opacity: 0.7;
+  }
+
+.work__links .link__text {
+  border-bottom: none;
+}
+
+.work__links .link__text::after {
+  display: none;
+}
+
+@keyframes button-swing {
+  0% { transform: rotate(-1deg); }
+  25% { transform: rotate(1deg); }
+  50% { transform: rotate(-0.5deg); }
+  75% { transform: rotate(0.5deg); }
+  100% { transform: rotate(-1deg); }
+}
+
+.work__links .link__text:hover {
+  animation: button-swing 1s ease-in-out;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  color: var(--pink);
+}
+
+.work__links .link__text span {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.work__links .link__text:hover span {
+  transform: translateX(3px);
+}
+
+  .sticky-note {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: #fefabc;
+    top: 40%;
+    right: 80%;
+    transform: rotate(-10deg);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.15);
+    padding: 15px;
+    font-family: var(--light-font);
+    font-size: 1rem;
+    color: #333;
+    z-index: 3;
+    transition: transform 0.3s ease;
+  }
+  .pin-tack {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background-color: var(--pink);
+    border-radius: 50%;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  
+  .email-note {
+    display: block;
+    width: fit-content;
+    transform: rotate(1deg);
+    position: relative;
+    text-align: center;
+  }
+  
+  .email-note .btn {
+    font-family: var(--light-font);
+    font-size: 2.4rem;
+    color: var(--pink);
+    padding: 1.5rem 4rem;
+    border: none;
+    background: white;
+    text-decoration: none;
+  }
+  
+  .email-note:hover {
+    animation: swing 1s ease-in-out;
+  }
+  
+  .email-note .tape {
+    background: rgba(255, 255, 255, 0.5);
+    width: 7rem;
+    left: 50%;
+    transform: translateX(-50%) rotate(-5deg);
+  }
+  .contact__info .email-note {
+    position: relative;
+    transform: rotate(2deg);
+    margin: 3rem auto; 
+    margin-top: 5rem;
+    text-align: center;
+}
+  
+  .contact__info .email-note .tape {
+    background: rgba(255, 255, 255, 0.5);
+    width: 6rem;
+    left: 45%;
+  }
+  
+  .postit-note .btn {
+    margin-top: 0;
+  }

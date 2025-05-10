@@ -11,13 +11,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap" rel="stylesheet">
 
-  <!-- Put your site title here -->
   <title>
     Pranaya Yadav Palleboyina | UI/UX Designer.
   </title>
 
   <meta name="description" content="UI/UX Designer with a focus on creating delightful digital experiences.">
-  <!-- Add some coding keywords below, Ex: (React, CSS etc) -->
   <meta name="keywords" content="UI/UX Designer, Pranaya Yadav, Portfolio, User Experience, Design, UX Research" />
   <link rel="stylesheet" href="index.css" />
 </head>
@@ -25,7 +23,6 @@
 
   <!-- ***** Header ***** -->
 
-<!-- Updated header section -->
 <header class="header" role="banner" id="top">
   <div class="row">
     <nav class="nav" role="navigation">
@@ -46,19 +43,16 @@
         <span>Hello, I'm Pranaya :)</span>
       </h1>
       
-      <!-- Small taped note for profession -->
-      <div class="taped-note profession-note">
-        <div class="tape"></div>
+      <div class="postit-note profession-note">
+        <div class="pin pin-postit"></div>
         <p class="profession">a UI/UX Designer</p>
       </div>
       
-      <!-- Small taped note for contact button -->
       <div class="taped-note contact-note">
         <div class="tape"></div>
         <a href="#contact" class="btn">Get in touch</a>
       </div>
       
-      <!-- Add chalk at bottom -->
       <div class="chalk-piece"></div>
     </div>
   </div>
@@ -69,18 +63,19 @@
     <!-- ***** Work ***** -->
 
     <section class="work" id="work">
+
       <div class="row">
+        <div class="sticky-note">
+          <p>My first ever Project!</p>
+          <div class="pin-tack"></div>
+        </div>
         <h2>My Work</h2>
-        <!-- Add hand-drawn star doodle -->
         <div class="doodle-star">✺</div>
         <div class="work__boxes">
-
-          <!-- Each div with the work__box class is a project. -->
-
           <div class="work__box">
-            <!-- Add pin element -->
             <div class="pin pin-left"></div>
             <div class="work__text">
+              
               <h3>Jenkins</h3>
               <p>
                 Revamping Jenkins.io website's Sucess Stories Feature
@@ -90,13 +85,9 @@
                 <a href="https://www.behance.net/gallery/223673399/Revamping-Jenkinsio-Website-Success-Stories-Feature" target="_blank" class="link__text">
                   Visit Project <span>&rarr;</span>
                 </a>
-                <a href="https://www.behance.net/gallery/223673399/Revamping-Jenkinsio-Website-Success-Stories-Feature" title="View Source Code" target="_blank">
-                  <img src="./images/behance-rounded-svgrepo-com.svg" class="work__code" alt="Behance">
-                </a>
               </div>
             </div>
             <div class="work__image-box">
-              <!-- Add Polaroid frame around image -->
               <div class="polaroid-image">
                 <img src="./images/Jenkins_header.png" class="work__image" alt="Project 1" />
                 <div class="polaroid-caption">
@@ -104,7 +95,6 @@
                 </div>
               </div>
             </div>
-            <!-- Add handwritten note -->
             <div class="handwritten-note">
               <div class="note-tape"></div>
               <p>This was an exciting project to work on!</p>
@@ -112,9 +102,8 @@
           </div>
 
           <div class="work__box">
-            <!-- Add paper clip element -->
             <div class="paperclip"></div>
-            <!-- Add pin element -->
+
             <div class="pin pin-right"></div>
             <div class="work__text">
               <h3>FREAKINS</h3>
@@ -126,13 +115,10 @@
                 <a href="https://www.behance.net/gallery/160670149/FREAKINS-redesign-case-study" class="link__text">
                   Visit Project <span>&rarr;</span>
                 </a>
-                <a href="https://www.behance.net/gallery/160670149/FREAKINS-redesign-case-study">
-                  <img src="./images/behance-rounded-svgrepo-com.svg" class="work__code" title="View Source Code" alt="Behance">
-                </a>
+              
               </div>
             </div>
             <div class="work__image-box">
-              <!-- Add Polaroid frame around image -->
               <div class="polaroid-image">
                 <img src="./images/Freakins_mockup.png" class="work__image" alt="Project 3" />
                 <div class="polaroid-caption">
@@ -143,7 +129,6 @@
           </div>
 
           <div class="work__box">
-            <!-- Add tape element -->
             <div class="tape tape-left"></div>
             <div class="work__text">
               <h3>ZombiNation</h3>
@@ -155,13 +140,10 @@
                 <a href="https://www.behance.net/gallery/225013343/ZombiNation-Take-Home-Project" class="link__text">
                   Visit Project <span>&rarr;</span>
                 </a>
-                <a href="https://www.behance.net/gallery/225013343/ZombiNation-Take-Home-Project">
-                  <img src="./images/behance-rounded-svgrepo-com.svg" class="work__code" title="View Source Code" alt="Behance">
-                </a>
+
               </div>
             </div>
             <div class="work__image-box">
-              <!-- Add Polaroid frame around image -->
               <div class="polaroid-image">
                 <img src="./images/ZombiNation_Mockup.png" class="work__image" alt="Project 1" />
                 <div class="polaroid-caption">
@@ -176,40 +158,44 @@
 
     <!-- ***** About ***** -->
 
-    <section class="about" id="about">
-      <div class="row">
-        <h2>About Me</h2>
-        <div class="about__content">
-          <div class="about__text notebook-paper">
-            <!-- Add ruled lines -->
-            <div class="notebook-lines"></div>
-            <!-- Add paperclip element -->
-            <div class="paperclip paperclip-red"></div>
-            <!-- Replace the below paragraph with info about yourself -->
-            <p>
-              Hi there! <br><br>
-              I'm Pranaya, a UX designer with roots in computer science who believes that technology should feel as natural as a conversation with a friend. 
-              <br><br>I blend my technical knowledge with creative problem-solving to craft experiences that make users relax rather than scratch their heads. 
-              <br><br>When I'm not wireframing or prototyping, you'll find me with a sketchbook in hand, bringing my imagination to life through doodles and drawings. 
-              <br>I'm passionate about finding that sweet spot where functionality meets delight — because a good design isn't just about how it looks, but how it feels.
-            </p>
-            <!-- Provide a link to your resume -->
-            <a href="#" class="btn">My Resume</a>
-          </div>
+<section class="about" id="about">
+  <div class="row">
+    <h2>About Me</h2>
+    <div class="about__content">
+      <div class="about__photo-container">
+        <div class="photo-frame">
+          <div class="tape tape-photo"></div>
+          <img class="about__photo" src="./images/Me.jpeg" alt="" />
+        </div>
+        <div class="photo-annotation">
+          <span class="annotation-text">That's me!</span>
+        </div>
+      </div>
 
-          <div class="about__photo-container">
-            <!-- Add photo with paper frame effect -->
-            <div class="photo-frame">
-              <!-- Add tape element -->
-              <div class="tape tape-photo"></div>
-              <img class="about__photo" src="./images/Me.jpeg" alt="" />
-            </div>
-            <!-- Add handwritten annotation -->
-            <div class="handwritten photo-annotation">↑ That's me!</div>
+      <div class="about__text">
+        <div class="yellow-note">
+          <p class="note-heading">Hi there!</p>
+          <p>
+            I'm Pranaya, a UX designer with roots in computer science who believes that technology should feel as 
+            natural as a conversation with a friend.
+          </p>
+          <p>
+            I blend my technical knowledge with creative problem-solving to craft experiences that make 
+            users relax rather than scratch their heads.
+          </p>
+          <p>
+            When I'm not wireframing or prototyping, you'll find me with a sketchbook in hand, bringing my 
+            imagination to life through doodles and drawings. I'm passionate about finding that sweet spot 
+            where functionality meets delight — because a good design isn't just about how it looks, but how it feels.
+          </p>
+          <div class="resume-btn-container">
+            <a href="#" class="btn resume-btn">Resume</a>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
   </main>
 
   <!-- ***** Contact ***** -->
@@ -218,15 +204,15 @@
     <div class="row">
       <h2>Get in Touch</h2>
       <div class="contact__info postit-note">
-        <!-- Add push pin -->
         <div class="pin pin-top"></div>
         <p>
           Have a project in mind or just want to say "Hi 👋" ? I'd love to hear from you! Drop me an email. 
           <br>Whether you're looking for design collaboration or just sharing ideas, I'm always happy to chat. Let's create something wonderful together! 😊
         </p>
-        <!-- Replace the email with yours -->
-        <a href="mailto:p.palleboyina@ufl.edu" class="btn">p.palleboyina@ufl.edu</a>
-        <!-- Add doodle -->
+        <div class="taped-note email-note">
+          <div class="tape"></div>
+          <a href="mailto:p.palleboyina@ufl.edu" class="btn">p.palleboyina@ufl.edu</a>
+        </div>
         <div class="doodle-pen">✎</div>
       </div>
     </div>
@@ -236,7 +222,6 @@
 
   <footer role="contentinfo" class="footer">
     <div class="row">
-      <!-- Update the links to point to your accounts -->
       <ul class="footer__social-links">
         <li class="footer__social-link-item">
           <a href="https://www.behance.net/pranayayadav" title="Link to Behance Profile">
@@ -255,7 +240,6 @@
         </li>
       </ul>
 
-      <!-- If you give me some credit by keeping the below paragraph, will be huge for me 😊 Thanks. -->
       <p>
         &copy; 2025 - Designed by <a href="https://pranaya-yadav.github.io/" class="link">Pranaya</a>
       </p>
