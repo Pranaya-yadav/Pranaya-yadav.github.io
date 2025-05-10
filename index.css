@@ -33,8 +33,8 @@
     --font-size-medium-1: 3.6rem;
     --font-size-large: 5.5rem;
     --font-size-huge: 7.5rem;
-    --dark-font: 'Chalkduster', 'Caveat', cursive; /* Dark background font */
-    --light-font: 'Gloria Hallelujah', cursive; /* Light background font */
+    --dark-font: 'Chalkduster', 'Finger Paint', 'Caveat', cursive;
+    --light-font: 'Gloria Hallelujah', cursive; 
     --font-stack: 'Jost', 'Nunito Sans', sans-serif; 
     --heading-font: 'Krona One', sans-serif; 
     --handwriting-font: 'Caveat', cursive;
@@ -616,14 +616,20 @@ body:not(.user-is-tabbing) a:focus {
 .work__image-box {
     margin-bottom: var(--gutter-normal);
     position: relative;
+    box-shadow: #000;
+    
+}
+.work__image {
+    box-shadow: 1px 1px 35px 3px rgba(0, 0, 0, 0.2);
 }
 
 .polaroid-image {
     background: white;
     padding: 1.5rem 1.5rem 4rem 1.5rem;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 1px 1px 20px 3px rgba(0, 0, 0, 0.3);  
     transform: rotate(1deg);
     transition: all 0.3s ease;
+    display: inline-block;  
 }
 
 .polaroid-image:hover {
